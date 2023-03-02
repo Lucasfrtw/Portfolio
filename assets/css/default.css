@@ -555,7 +555,7 @@ footer svg-icon {
 
 @media only screen and (max-width: 500px) {
   .items-r {
-    margin-left: 40%;
+    margin: 30% 40%;
     align-items: center;
   }
 
@@ -564,12 +564,15 @@ footer svg-icon {
     align-items: center;
     margin-right: 90%;
   }
+  .section2{
+    min-height: 130vh;
+  }
 
   .section2 .text {
     flex-direction: column;
     width: 100%;
     padding: 0;
-    margin: 10%;
+    margin: 30%;
   }
 
   .left {
