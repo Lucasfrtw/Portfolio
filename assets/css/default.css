@@ -55,23 +55,6 @@ nav.nav-container {
 html.sr .widget {
   visibility: hidden;
 }
-
-.hamburger {
-  display: none;
-  cursor: pointer;
-  position: absolute;
-  right: 10%;
-}
-
-.hamburger .line {
-  width: 25px;
-  height: 3px;
-  background-color: #333;
-  margin: 5px;
-  transition: all 0.3s ease-in-out;
-}
-
-
 .section3,
 .projetos {
   width: 100%;
@@ -399,6 +382,29 @@ footer svg-icon {
   width: 30px;
 }
 
+.menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+}
+.hamburger {
+  display: none;
+  cursor: pointer;
+  position: fixed;
+  top: 20px; 
+  right: 20px;
+  z-index: 999;
+}
+
+.line {
+  width: 30px;
+  height: 3px;
+  background-color: black;
+  margin: 5px;
+}
+
+
 
 
 @media screen and (max-width: 1656px) {
@@ -431,58 +437,56 @@ footer svg-icon {
   .container {
     max-width: 80%;
   }
+  
 
 }
 
 
 @media only screen and (max-width: 950px) {
+  .menu {
+    /* remove a propriedade position relative */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+  }
+  
   .nav-links {
-    display: none;
-    position: absolute;
-    top: 70px;
-    left: 0;
+    position: fixed;
+    height: 100vh;
+    top: 80px;
+    right: -100%;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    transition: 0.5s;
     width: 100%;
-    background: #444444;
-    z-index: 1;
   }
-
+  
   .nav-links li {
-    display: block;
-    text-align: center;
-    margin-bottom: 10px;
+    opacity: 0;
   }
-
-  .t-logo{
-    padding: 0;
-  }
-
-  .nav-links li a {
-    display: inline-block;
-    font-size: 20px;
-    color: #ffffff;
-    padding: 10px 20px;
-    border-radius: 5px;
-  }
-
-  .nav-links.active {
-    display: block;
-  }
-
+  
   .hamburger {
     display: block;
-    position: absolute;
-    top: 25px;
-    right: 25px;
-    cursor: pointer;
-    z-index: 2;
+    /* define a posição em relação à janela */
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 999;
   }
-
-  .hamburger .line {
-    width: 30px;
-    height: 3px;
-    background: #333;
-    margin: 5px 0;
-    border-radius: 5px;
+  
+  .nav-active {
+    right: 0;
+    opacity: 1;
+    transition: 0.5s;
+  }
+  
+  .nav-links li {
+    opacity: 1;
+    transition: 0.5s ease-in;
   }
 
   .header {
