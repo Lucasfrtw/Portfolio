@@ -404,6 +404,10 @@ footer svg-icon {
   margin: 5px;
 }
 
+.nav-active {
+  right: 0; /* altera a posição para que o menu apareça */
+}
+
 
 
 
@@ -444,7 +448,6 @@ footer svg-icon {
 
 @media only screen and (max-width: 950px) {
   .menu {
-    /* remove a propriedade position relative */
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -453,11 +456,11 @@ footer svg-icon {
   
   .nav-links {
     position: fixed;
-    height: 100vh;
-    top: 80px;
+    min-height: 100vh;
+    top: 0px;
     right: -100%;
     background-color: white;
-    display: flex;
+    display: none;
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
@@ -471,7 +474,6 @@ footer svg-icon {
   
   .hamburger {
     display: block;
-    /* define a posição em relação à janela */
     position: fixed;
     top: 20px;
     right: 20px;
@@ -482,6 +484,7 @@ footer svg-icon {
     right: 0;
     opacity: 1;
     transition: 0.5s;
+    display: flex;
   }
   
   .nav-links li {
